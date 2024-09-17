@@ -4,7 +4,7 @@ stages {
     stage('LMS code analysis')  {
         steps{ 
             echo 'sonar code analysis started'
-            sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL="http://54.165.234.35:9000" -v ".:/usr/src" -e SONAR_TOKEN="sqp_0c925e15ffdee0c9be1d25118167e63fea24b6b4" sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms'
+            sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL="http://54.165.234.35:9000" -v ".:/usr/src" -e SONAR_TOKEN="sqp_a1fbea412a8b4fd79ea8c574de4cb5c1fef40220" sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms'
             echo 'sonar code analysis completed'
         }
     }
