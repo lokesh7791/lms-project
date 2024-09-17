@@ -18,7 +18,7 @@ stages {
     stage('LMS release'){
         steps{
             script {
-                def packageJson = readJSON file: '/webapp/package.json'
+                def packageJson = readJSON file: 'webapp/package.json'
                 def packageJSONversion = packageJson.version
                 echo "${packageJSONversion}"
                 sh "zip webapp/lms-${packageJSONversion}.zip -r webapp/dist"
@@ -30,7 +30,7 @@ stages {
     stage('LMS Deploy') {
         steps {
             script {
-                def packageJson = readJSON file: '/webapp/package.json'
+                def packageJson = readJSON file: 'webapp/package.json'
                 def packageJSONversion = packageJson.version
                 echo "${packageJSONversion}"
                 sh  "curl -u admin:lms12345 -X GET \'http://54.165.234.35:8081/repository/lms/lms-${packageJSONVersion}.zip\' --output lms-'${packageJSONVersion}'.zip"
