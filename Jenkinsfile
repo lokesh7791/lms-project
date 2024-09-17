@@ -40,7 +40,7 @@ stages {
             }
         }
     }
-    stage(clean up workspace) {
+    stage('clean up workspace') {
         steps {
             echo 'cleanup WorkSpace'
             cleanWs()
