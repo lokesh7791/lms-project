@@ -35,7 +35,7 @@ stages {
                 echo "${packageJSONversion}"
                 sh  "curl -u admin:lms12345 -X GET \'http://54.165.234.35:8081/repository/lms/lms-${packageJSONVersion}.zip\' --output lms-'${packageJSONVersion}'.zip"
                 sh "sudo rm -rf /var/www/html/*"
-                sh "sudo unzip -o lms-${packageJSONversion}.zip "
+                sh "sudo unzip -o lms-'${packageJSONversion}'.zip "
                 sh "sudo cp -r webapp/dist/* /var/www/html"
             }
         }
